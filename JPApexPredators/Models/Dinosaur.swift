@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 struct Dinosaur: Decodable, Identifiable {
     struct MovieScene: Decodable {
@@ -14,13 +15,34 @@ struct Dinosaur: Decodable, Identifiable {
         let sceneDescription: String
     }
 
+    enum DinosaurType: String, Decodable {
+            case land
+            case sea
+            case air
+
+            var background: Color {
+                switch self {
+                case .land:
+                        .brown
+                case .sea:
+                        .teal
+                case .air:
+                        .blue
+                }
+            }
+        }
+
     let id: Int
     let name: String
-    let type: String
+    let type: DinosaurType
     let latitude: Double
     let longitude: Double
     let movies: [String]
     let movieScenes: [MovieScene]
     let link: String
+
+    var imageName: String {
+        name.lowercased().replacingOccurrences(of: " ", with: "-")
+    }
 }
 
