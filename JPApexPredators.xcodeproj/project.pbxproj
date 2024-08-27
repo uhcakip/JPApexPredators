@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,6 +11,7 @@
 		E860DE8C2C773B4F00F7D68D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E860DE8B2C773B4F00F7D68D /* ContentView.swift */; };
 		E860DE8E2C773B5000F7D68D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E860DE8D2C773B5000F7D68D /* Assets.xcassets */; };
 		E860DE912C773B5000F7D68D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E860DE902C773B5000F7D68D /* Preview Assets.xcassets */; };
+		E8EAC07A2C785C09005574AF /* dinosaurs.json in Resources */ = {isa = PBXBuildFile; fileRef = E8EAC0792C785C09005574AF /* dinosaurs.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		E860DE8B2C773B4F00F7D68D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E860DE8D2C773B5000F7D68D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E860DE902C773B5000F7D68D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		E8EAC0792C785C09005574AF /* dinosaurs.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = dinosaurs.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +54,7 @@
 			isa = PBXGroup;
 			children = (
 				E860DE892C773B4F00F7D68D /* JPApexPredatorsApp.swift */,
+				E8C4C8B72C7B12A60005ED91 /* Resources */,
 				E860DE8B2C773B4F00F7D68D /* ContentView.swift */,
 				E860DE8D2C773B5000F7D68D /* Assets.xcassets */,
 				E860DE8F2C773B5000F7D68D /* Preview Content */,
@@ -65,6 +68,14 @@
 				E860DE902C773B5000F7D68D /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		E8C4C8B72C7B12A60005ED91 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E8EAC0792C785C09005574AF /* dinosaurs.json */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,6 +136,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8EAC07A2C785C09005574AF /* dinosaurs.json in Resources */,
 				E860DE912C773B5000F7D68D /* Preview Assets.xcassets in Resources */,
 				E860DE8E2C773B5000F7D68D /* Assets.xcassets in Resources */,
 			);
