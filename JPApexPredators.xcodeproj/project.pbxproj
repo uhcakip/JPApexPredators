@@ -11,6 +11,7 @@
 		E860DE8C2C773B4F00F7D68D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E860DE8B2C773B4F00F7D68D /* ContentView.swift */; };
 		E860DE8E2C773B5000F7D68D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E860DE8D2C773B5000F7D68D /* Assets.xcassets */; };
 		E860DE912C773B5000F7D68D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E860DE902C773B5000F7D68D /* Preview Assets.xcassets */; };
+		E8B3FE4C2C7DDBA500B47128 /* Inject in Frameworks */ = {isa = PBXBuildFile; productRef = E8B3FE4B2C7DDBA500B47128 /* Inject */; };
 		E8C4C8B92C7B231D0005ED91 /* DinosaurService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C4C8B82C7B231D0005ED91 /* DinosaurService.swift */; };
 		E8EAC07A2C785C09005574AF /* dinosaurs.json in Resources */ = {isa = PBXBuildFile; fileRef = E8EAC0792C785C09005574AF /* dinosaurs.json */; };
 		E8EAC07D2C786132005574AF /* Dinosaur.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8EAC07C2C786132005574AF /* Dinosaur.swift */; };
@@ -32,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8B3FE4C2C7DDBA500B47128 /* Inject in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,6 +118,9 @@
 			dependencies = (
 			);
 			name = JPApexPredators;
+			packageProductDependencies = (
+				E8B3FE4B2C7DDBA500B47128 /* Inject */,
+			);
 			productName = JPApexPredators;
 			productReference = E860DE862C773B4F00F7D68D /* JPApexPredators.app */;
 			productType = "com.apple.product-type.application";
@@ -144,6 +149,9 @@
 				Base,
 			);
 			mainGroup = E860DE7D2C773B4F00F7D68D;
+			packageReferences = (
+				E8B3FE4A2C7DDBA500B47128 /* XCRemoteSwiftPackageReference "Inject" */,
+			);
 			productRefGroup = E860DE872C773B4F00F7D68D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -238,6 +246,10 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"-Xlinker",
+					"-interposable",
+				);
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -380,6 +392,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E8B3FE4A2C7DDBA500B47128 /* XCRemoteSwiftPackageReference "Inject" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/krzysztofzablocki/Inject.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.5.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E8B3FE4B2C7DDBA500B47128 /* Inject */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E8B3FE4A2C7DDBA500B47128 /* XCRemoteSwiftPackageReference "Inject" */;
+			productName = Inject;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E860DE7E2C773B4F00F7D68D /* Project object */;
 }
