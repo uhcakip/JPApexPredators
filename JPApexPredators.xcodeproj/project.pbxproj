@@ -136,7 +136,7 @@
 				};
 			};
 			buildConfigurationList = E860DE812C773B4F00F7D68D /* Build configuration list for PBXProject "JPApexPredators" */;
-			compatibilityVersion = "Xcode 14.0";
+			compatibilityVersion = "Xcode 15.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
