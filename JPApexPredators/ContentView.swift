@@ -10,10 +10,18 @@ import Inject
 
 struct ContentView: View {
     @ObserveInjection var inject
+    @State var searchText = ""
+
+    var filteredDinosaurs: [Dinosaur] {
+        var dinosaurs = DinosaurService().dinosaurs
+        return searchText.isEmpty
+            ? dinosaurs
+            : dinosaurs.filter { $0.name.localizedCaseInsensitiveContains(searchText) }
+    }
 
     var body: some View {
         NavigationView {
-            List(DinosaurService().dinosaurs) { dinosaur in
+            List(filteredDinosaurs) { dinosaur in
                 NavigationLink {
                     // TODO: Add a detail view
                     Image(dinosaur.imageName)
@@ -43,6 +51,8 @@ struct ContentView: View {
                 }
             }
             .navigationTitle("Dinosaurs")
+            .searchable(text: $searchText)
+            .disableAutocorrection(true)
         }
         .enableInjection()
         .preferredColorScheme(.dark)
