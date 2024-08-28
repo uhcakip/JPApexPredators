@@ -1,5 +1,5 @@
 //
-//  DinosaurService.swift
+//  DinosaurController.swift
 //  JPApexPredators
 //
 //  Created by Yuna Chou on 2024/8/25.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-class DinosaurService {
+class DinosaurController {
     var dinosaurs: [Dinosaur] = []
 
     init() {

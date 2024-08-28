@@ -13,7 +13,7 @@ struct ContentView: View {
     @State var searchText = ""
 
     var filteredDinosaurs: [Dinosaur] {
-        var dinosaurs = DinosaurService().dinosaurs
+        var dinosaurs = DinosaurController().dinosaurs
         return searchText.isEmpty
             ? dinosaurs
             : dinosaurs.filter { $0.name.localizedCaseInsensitiveContains(searchText) }
@@ -53,6 +53,7 @@ struct ContentView: View {
             .navigationTitle("Dinosaurs")
             .searchable(text: $searchText)
             .disableAutocorrection(true)
+            .animation(.default, value: searchText)
         }
         .enableInjection()
         .preferredColorScheme(.dark)
