@@ -11,12 +11,12 @@ import Inject
 struct ContentView: View {
     @ObserveInjection var inject
     @State var searchText = ""
+    @State var alphabetically = false
+    let dinosaurController = DinosaurController()
 
     var filteredDinosaurs: [Dinosaur] {
-        var dinosaurs = DinosaurController().dinosaurs
-        return searchText.isEmpty
-            ? dinosaurs
-            : dinosaurs.filter { $0.name.localizedCaseInsensitiveContains(searchText) }
+        dinosaurController.sort(by: alphabetically)
+        return dinosaurController.search(for: searchText)
     }
 
     var body: some View {
@@ -54,6 +54,18 @@ struct ContentView: View {
             .searchable(text: $searchText)
             .disableAutocorrection(true)
             .animation(.default, value: searchText)
+            .toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    Button {
+                        withAnimation {
+                            alphabetically.toggle()
+                        }
+                    } label: {
+                        Image(systemName: alphabetically ? "film" : "textformat")
+                            .symbolEffect(.bounce, value: alphabetically)
+                    }
+                }
+            }
         }
         .enableInjection()
         .preferredColorScheme(.dark)
