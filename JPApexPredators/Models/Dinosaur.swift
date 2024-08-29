@@ -15,23 +15,6 @@ struct Dinosaur: Decodable, Identifiable {
         let sceneDescription: String
     }
 
-    enum DinosaurType: String, Decodable {
-            case land
-            case sea
-            case air
-
-            var background: Color {
-                switch self {
-                case .land:
-                        .brown
-                case .sea:
-                        .teal
-                case .air:
-                        .blue
-                }
-            }
-        }
-
     let id: Int
     let name: String
     let type: DinosaurType
@@ -46,3 +29,39 @@ struct Dinosaur: Decodable, Identifiable {
     }
 }
 
+enum DinosaurType: String, Decodable, CaseIterable, Identifiable {
+    case all // This case is for filter menu
+    case land
+    case sea
+    case air
+
+    var id: DinosaurType {
+        self
+    }
+
+    var background: Color {
+        switch self {
+        case .all:
+            .black
+        case .land:
+            .brown
+        case .sea:
+            .teal
+        case .air:
+            .blue
+        }
+    }
+
+    var icon: String {
+        switch self {
+        case .all:
+            "square.stack.3d.up.fill"
+        case .land:
+            "leaf.fill"
+        case .sea:
+            "drop.fill"
+        case .air:
+            "wind"
+        }
+    }
+}
