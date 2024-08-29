@@ -27,11 +27,19 @@ class DinosaurController {
         }
     }
 
-    func search(for searchTerm: String) -> [Dinosaur] {
-        searchTerm.isEmpty ? dinosaurs : dinosaurs.filter { $0.name.localizedCaseInsensitiveContains(searchTerm) }
-    }
+    func filterAndSort(by type: DinosaurType, text searchText: String, sort alphabetically: Bool) -> [Dinosaur] {
+        var filteredDinosaurs = dinosaurs
 
-    func sort(by alphabetically: Bool) {
-        dinosaurs.sort { alphabetically ? $0.name < $1.name : $0.id < $1.id }
+        if type != .all {
+            filteredDinosaurs = filteredDinosaurs.filter { $0.type == type }
+        }
+        if !searchText.isEmpty {
+            filteredDinosaurs = filteredDinosaurs.filter {
+                $0.name.lowercased().contains(searchText.lowercased())
+            }
+        }
+
+        filteredDinosaurs.sort { alphabetically ? $0.name < $1.name : $0.id < $1.id }
+        return filteredDinosaurs
     }
 }
