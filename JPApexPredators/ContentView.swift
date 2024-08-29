@@ -78,6 +78,7 @@ struct ContentView: View {
                             RoundedRectangle(cornerRadius: 5)
                                 .fill(.blue.opacity(type == .all ? 0 : 0.5))
                                 .frame(width: 30, height: 30)
+                                .animation(nil, value: type)
 
                             Image(systemName: "slider.horizontal.3")
                                 .foregroundColor(.blue)
