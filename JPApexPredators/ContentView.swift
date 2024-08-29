@@ -10,13 +10,14 @@ import Inject
 
 struct ContentView: View {
     @ObserveInjection var inject
+    @State var type = DinosaurType.all
     @State var searchText = ""
     @State var alphabetically = false
+
     let dinosaurController = DinosaurController()
 
     var filteredDinosaurs: [Dinosaur] {
-        dinosaurController.sort(by: alphabetically)
-        return dinosaurController.search(for: searchText)
+        dinosaurController.filterAndSort(by: type, text: searchText, sort: alphabetically)
     }
 
     var body: some View {
@@ -63,6 +64,24 @@ struct ContentView: View {
                     } label: {
                         Image(systemName: alphabetically ? "film" : "textformat")
                             .symbolEffect(.bounce, value: alphabetically)
+                    }
+                }
+                ToolbarItem(placement: .topBarTrailing) {
+                    Menu {
+                        Picker("Filter", selection: $type.animation()) {
+                            ForEach(DinosaurType.allCases) { type in
+                                Label(type.rawValue.capitalized, systemImage: type.icon)
+                            }
+                        }
+                    } label: {
+                        ZStack {
+                            RoundedRectangle(cornerRadius: 5)
+                                .fill(.blue.opacity(type == .all ? 0 : 0.5))
+                                .frame(width: 30, height: 30)
+
+                            Image(systemName: "slider.horizontal.3")
+                                .foregroundColor(.blue)
+                        }
                     }
                 }
             }
