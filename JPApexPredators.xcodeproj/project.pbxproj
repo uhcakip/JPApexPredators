@@ -124,6 +124,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				E8A58F472C859A5E00AA9C00 /* PBXTargetDependency */,
 			);
 			name = JPApexPredators;
 			packageProductDependencies = (
@@ -159,6 +160,7 @@
 			mainGroup = E860DE7D2C773B4F00F7D68D;
 			packageReferences = (
 				E8B3FE4A2C7DDBA500B47128 /* XCRemoteSwiftPackageReference "Inject" */,
+				E8A58F452C859A4E00AA9C00 /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */,
 			);
 			productRefGroup = E860DE872C773B4F00F7D68D /* Products */;
 			projectDirPath = "";
@@ -191,10 +193,18 @@
 				E860DE8A2C773B4F00F7D68D /* JPApexPredatorsApp.swift in Sources */,
 				E8EAC07D2C786132005574AF /* Dinosaur.swift in Sources */,
 				E8C4C8B92C7B231D0005ED91 /* DinosaurController.swift in Sources */,
+				AEDAA2E3E621144A07ECA229 /* DinosaurDetailView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E8A58F472C859A5E00AA9C00 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = E8A58F462C859A5E00AA9C00 /* SwiftLintBuildToolPlugin */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		E860DE922C773B5000F7D68D /* Debug */ = {
@@ -402,6 +412,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		E8A58F452C859A4E00AA9C00 /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SimplyDanny/SwiftLintPlugins";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.56.2;
+			};
+		};
 		E8B3FE4A2C7DDBA500B47128 /* XCRemoteSwiftPackageReference "Inject" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/krzysztofzablocki/Inject.git";
@@ -413,6 +431,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		E8A58F462C859A5E00AA9C00 /* SwiftLintBuildToolPlugin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E8A58F452C859A4E00AA9C00 /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */;
+			productName = "plugin:SwiftLintBuildToolPlugin";
+		};
 		E8B3FE4B2C7DDBA500B47128 /* Inject */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = E8B3FE4A2C7DDBA500B47128 /* XCRemoteSwiftPackageReference "Inject" */;
