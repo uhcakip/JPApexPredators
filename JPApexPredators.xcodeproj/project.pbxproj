@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E80640502C86D56D0099062F /* SwiftFormat in Frameworks */ = {isa = PBXBuildFile; productRef = E806404F2C86D56D0099062F /* SwiftFormat */; };
 		E860DE8A2C773B4F00F7D68D /* JPApexPredatorsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E860DE892C773B4F00F7D68D /* JPApexPredatorsApp.swift */; };
 		E860DE8C2C773B4F00F7D68D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E860DE8B2C773B4F00F7D68D /* ContentView.swift */; };
 		E860DE8E2C773B5000F7D68D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E860DE8D2C773B5000F7D68D /* Assets.xcassets */; };
@@ -34,6 +35,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E8B3FE4C2C7DDBA500B47128 /* Inject in Frameworks */,
+				E80640502C86D56D0099062F /* SwiftFormat in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -129,6 +131,7 @@
 			name = JPApexPredators;
 			packageProductDependencies = (
 				E8B3FE4B2C7DDBA500B47128 /* Inject */,
+				E806404F2C86D56D0099062F /* SwiftFormat */,
 			);
 			productName = JPApexPredators;
 			productReference = E860DE862C773B4F00F7D68D /* JPApexPredators.app */;
@@ -161,6 +164,7 @@
 			packageReferences = (
 				E8B3FE4A2C7DDBA500B47128 /* XCRemoteSwiftPackageReference "Inject" */,
 				E8A58F452C859A4E00AA9C00 /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */,
+				E806404E2C86D56D0099062F /* XCRemoteSwiftPackageReference "SwiftFormat" */,
 			);
 			productRefGroup = E860DE872C773B4F00F7D68D /* Products */;
 			projectDirPath = "";
@@ -193,7 +197,6 @@
 				E860DE8A2C773B4F00F7D68D /* JPApexPredatorsApp.swift in Sources */,
 				E8EAC07D2C786132005574AF /* Dinosaur.swift in Sources */,
 				E8C4C8B92C7B231D0005ED91 /* DinosaurController.swift in Sources */,
-				AEDAA2E3E621144A07ECA229 /* DinosaurDetailView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,7 +247,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -311,7 +314,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -412,6 +415,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		E806404E2C86D56D0099062F /* XCRemoteSwiftPackageReference "SwiftFormat" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/nicklockwood/SwiftFormat#swift-package-manager-plugin";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.54.3;
+			};
+		};
 		E8A58F452C859A4E00AA9C00 /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SimplyDanny/SwiftLintPlugins";
@@ -431,6 +442,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		E806404F2C86D56D0099062F /* SwiftFormat */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E806404E2C86D56D0099062F /* XCRemoteSwiftPackageReference "SwiftFormat" */;
+			productName = SwiftFormat;
+		};
 		E8A58F462C859A5E00AA9C00 /* SwiftLintBuildToolPlugin */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = E8A58F452C859A4E00AA9C00 /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */;

@@ -1,5 +1,5 @@
 {
-  "originHash" : "b466e2f480436eb2795329424f235822a59eb5d5d81f3596da0e1acb49f2fce9",
+  "originHash" : "2c2f6b7971549f2bce37b4cd0a75395f96a793855d2505d5403d5799b61d6e9c",
   "pins" : [
     {
       "identity" : "inject",
@@ -8,6 +8,15 @@
       "state" : {
         "revision" : "728c56639ecb3df441d51d5bc6747329afabcfc9",
         "version" : "1.5.2"
+      }
+    },
+    {
+      "identity" : "swiftformat#swift-package-manager-plugin",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/nicklockwood/SwiftFormat#swift-package-manager-plugin",
+      "state" : {
+        "revision" : "d6309f7440889427426143b4a0b100b959d3f3e6",
+        "version" : "0.54.3"
       }
     },
     {
