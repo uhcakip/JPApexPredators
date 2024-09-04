@@ -35,7 +35,7 @@ enum DinosaurType: String, Decodable, CaseIterable, Identifiable {
     case sea
     case air
 
-    var id: DinosaurType {
+    var id: Self {
         self
     }
 

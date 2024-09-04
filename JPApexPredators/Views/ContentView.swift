@@ -10,9 +10,9 @@ import Inject
 
 struct ContentView: View {
     @ObserveInjection var inject
-    @State var type = DinosaurType.all
-    @State var searchText = ""
-    @State var alphabetically = false
+    @State private var type = DinosaurType.all
+    @State private var searchText = ""
+    @State private var alphabetically = false
 
     let dinosaurController = DinosaurController()
 
