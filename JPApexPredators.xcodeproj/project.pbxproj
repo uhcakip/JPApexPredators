@@ -14,6 +14,7 @@
 		E860DE912C773B5000F7D68D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E860DE902C773B5000F7D68D /* Preview Assets.xcassets */; };
 		E8B3FE4C2C7DDBA500B47128 /* Inject in Frameworks */ = {isa = PBXBuildFile; productRef = E8B3FE4B2C7DDBA500B47128 /* Inject */; };
 		E8C4C8B92C7B231D0005ED91 /* DinosaurController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C4C8B82C7B231D0005ED91 /* DinosaurController.swift */; };
+		E8C536D12C86E79800E7AD43 /* DinosaurDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C536D02C86E79800E7AD43 /* DinosaurDetailView.swift */; };
 		E8EAC07A2C785C09005574AF /* dinosaurs.json in Resources */ = {isa = PBXBuildFile; fileRef = E8EAC0792C785C09005574AF /* dinosaurs.json */; };
 		E8EAC07D2C786132005574AF /* Dinosaur.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8EAC07C2C786132005574AF /* Dinosaur.swift */; };
 /* End PBXBuildFile section */
@@ -25,6 +26,7 @@
 		E860DE8D2C773B5000F7D68D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E860DE902C773B5000F7D68D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E8C4C8B82C7B231D0005ED91 /* DinosaurController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DinosaurController.swift; sourceTree = "<group>"; };
+		E8C536D02C86E79800E7AD43 /* DinosaurDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DinosaurDetailView.swift; sourceTree = "<group>"; };
 		E8EAC0792C785C09005574AF /* dinosaurs.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = dinosaurs.json; sourceTree = "<group>"; };
 		E8EAC07C2C786132005574AF /* Dinosaur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dinosaur.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -46,6 +48,7 @@
 			isa = PBXGroup;
 			children = (
 				E860DE8B2C773B4F00F7D68D /* ContentView.swift */,
+				E8C536D02C86E79800E7AD43 /* DinosaurDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -194,6 +197,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E860DE8C2C773B4F00F7D68D /* ContentView.swift in Sources */,
+				E8C536D12C86E79800E7AD43 /* DinosaurDetailView.swift in Sources */,
 				E860DE8A2C773B4F00F7D68D /* JPApexPredatorsApp.swift in Sources */,
 				E8EAC07D2C786132005574AF /* Dinosaur.swift in Sources */,
 				E8C4C8B92C7B231D0005ED91 /* DinosaurController.swift in Sources */,

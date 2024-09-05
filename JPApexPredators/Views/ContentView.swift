@@ -24,10 +24,7 @@ struct ContentView: View {
         NavigationStack {
             List(filteredDinosaurs) { dinosaur in
                 NavigationLink {
-                    // TODO: Add a detail view
-                    Image(dinosaur.imageName)
-                        .resizable()
-                        .scaledToFit()
+                    DinosaurDetailView(dinosaur: dinosaur)
                 } label: {
                     HStack {
                         Image(dinosaur.imageName)
