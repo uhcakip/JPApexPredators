@@ -21,7 +21,7 @@ struct ContentView: View {
     }
 
     var body: some View {
-        NavigationView {
+        NavigationStack {
             List(filteredDinosaurs) { dinosaur in
                 NavigationLink {
                     // TODO: Add a detail view
