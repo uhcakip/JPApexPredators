@@ -17,3 +17,6 @@ xcuserdata/
 ### JetBrains ###
 .idea/
 .fleet/
+
+### VSCode ###
+.vscode/
