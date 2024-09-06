@@ -7,10 +7,20 @@
 
 import Inject
 import SwiftUI
+import MapKit
 
 struct DinosaurDetailView: View {
     @ObserveInjection var inject
     let dinosaur: Dinosaur
+    private var position: Binding<MapCameraPosition>
+
+    init(dinosaur: Dinosaur) {
+        self.dinosaur = dinosaur
+        self.position = .constant(.camera(MapCamera(
+            centerCoordinate: dinosaur.location,
+            distance: 3000
+        )))
+    }
 
     var body: some View {
         GeometryReader { geo in
@@ -48,10 +58,39 @@ struct DinosaurDetailView: View {
                         .fontWeight(.bold)
 
                     // MARK: current location
+                    NavigationLink {
+                        // TODO: Dinosaur map view
+
+                    } label: {
+                        Map(position: position) {
+                           Annotation(dinosaur.name, coordinate: dinosaur.location) {
+                                Image(systemName: "mappin.and.ellipse")
+                                    .font(.largeTitle)
+                                    .imageScale(.large)
+                                    .symbolEffect(.pulse)
+                            }
+                            .annotationTitles(.hidden)
+                        }
+                        .frame(height: 125)
+                        .overlay(alignment: .trailing) {
+                            Image(systemName: "greaterthan")
+                                .imageScale(.large)
+                                .font(.title3)
+                                .padding(.trailing, 5)
+                        }
+                        .overlay(alignment: .topLeading) {
+                            Text("Current location")
+                                .padding(5)
+                                .background(.black.opacity(0.5))
+                                .clipShape(.rect(bottomTrailingRadius: 10))
+                        }
+                    }
+                    .clipShape(.rect(cornerRadius: 10))
 
                     // MARK: appears in
                     Text("Appears in:")
                         .font(.title3)
+                        .padding(.top, 15)
 
                     ForEach(dinosaur.movies, id: \.self) { movie in
                         /* HStack {
@@ -101,6 +140,7 @@ struct DinosaurDetailView: View {
             }
             .ignoresSafeArea()
         }
+        .toolbarBackground(.automatic)
         .enableInjection()
     }
 }

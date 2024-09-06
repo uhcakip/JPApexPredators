@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import MapKit
 
 struct Dinosaur: Decodable, Identifiable {
     struct MovieScene: Decodable, Identifiable {
@@ -26,6 +27,10 @@ struct Dinosaur: Decodable, Identifiable {
 
     var imageName: String {
         name.lowercased().replacingOccurrences(of: " ", with: "-")
+    }
+
+    var location: CLLocationCoordinate2D {
+        CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
     }
 }
 
