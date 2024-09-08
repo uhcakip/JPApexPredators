@@ -59,8 +59,7 @@ struct DinosaurDetailView: View {
 
                     // MARK: current location
                     NavigationLink {
-                        // TODO: Dinosaur map view
-
+                        DinosaurMapView(location: dinosaur.location)
                     } label: {
                         Map(position: position) {
                            Annotation(dinosaur.name, coordinate: dinosaur.location) {
