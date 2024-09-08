@@ -84,8 +84,8 @@ struct ContentView: View {
                 }
             }
         }
-        .enableInjection()
         .preferredColorScheme(.dark)
+        .enableInjection()
     }
 }
 
