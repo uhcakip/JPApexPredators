@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		E80640502C86D56D0099062F /* SwiftFormat in Frameworks */ = {isa = PBXBuildFile; productRef = E806404F2C86D56D0099062F /* SwiftFormat */; };
 		E82BD7B32C8EE77200904670 /* DinosaurType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82BD7B22C8EE77200904670 /* DinosaurType.swift */; };
+		E82BD7B62C8EEB8600904670 /* DinosaurService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82BD7B52C8EEB8600904670 /* DinosaurService.swift */; };
+		E82BD7B92C8EF1AA00904670 /* DinosaurListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82BD7B82C8EF1AA00904670 /* DinosaurListViewModel.swift */; };
 		E860DE8A2C773B4F00F7D68D /* JPApexPredatorsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E860DE892C773B4F00F7D68D /* JPApexPredatorsApp.swift */; };
 		E860DE8C2C773B4F00F7D68D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E860DE8B2C773B4F00F7D68D /* ContentView.swift */; };
 		E860DE8E2C773B5000F7D68D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E860DE8D2C773B5000F7D68D /* Assets.xcassets */; };
@@ -49,6 +51,8 @@
 
 /* Begin PBXFileReference section */
 		E82BD7B22C8EE77200904670 /* DinosaurType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DinosaurType.swift; sourceTree = "<group>"; };
+		E82BD7B52C8EEB8600904670 /* DinosaurService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DinosaurService.swift; sourceTree = "<group>"; };
+		E82BD7B82C8EF1AA00904670 /* DinosaurListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DinosaurListViewModel.swift; sourceTree = "<group>"; };
 		E860DE862C773B4F00F7D68D /* JPApexPredators.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JPApexPredators.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E860DE892C773B4F00F7D68D /* JPApexPredatorsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JPApexPredatorsApp.swift; sourceTree = "<group>"; };
 		E860DE8B2C773B4F00F7D68D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -77,6 +81,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E82BD7B42C8EE97000904670 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				E82BD7B52C8EEB8600904670 /* DinosaurService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		E82BD7B72C8EF17300904670 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				E82BD7B82C8EF1AA00904670 /* DinosaurListViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		E83FB5B52C81A05F00F79E59 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -110,7 +130,9 @@
 			children = (
 				E860DE892C773B4F00F7D68D /* JPApexPredatorsApp.swift */,
 				E8EAC07B2C78610C005574AF /* Models */,
+				E82BD7B72C8EF17300904670 /* ViewModels */,
 				E83FB5B52C81A05F00F79E59 /* Views */,
+				E82BD7B42C8EE97000904670 /* Services */,
 				E8C4C8BD2C7B293A0005ED91 /* Controllers */,
 				E8C4C8B72C7B12A60005ED91 /* Resources */,
 				E860DE8D2C773B5000F7D68D /* Assets.xcassets */,
@@ -277,7 +299,9 @@
 				E8B531C92C8B413F00226CAD /* DinosaurMapView.swift in Sources */,
 				E860DE8A2C773B4F00F7D68D /* JPApexPredatorsApp.swift in Sources */,
 				E8EAC07D2C786132005574AF /* Dinosaur.swift in Sources */,
+				E82BD7B62C8EEB8600904670 /* DinosaurService.swift in Sources */,
 				E8C4C8B92C7B231D0005ED91 /* DinosaurController.swift in Sources */,
+				E82BD7B92C8EF1AA00904670 /* DinosaurListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
