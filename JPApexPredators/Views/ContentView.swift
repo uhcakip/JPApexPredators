@@ -104,6 +104,7 @@ struct FilterMenu: View {
 
                 Image(systemName: "slider.horizontal.3")
                     .foregroundColor(.accent)
+                    .symbolEffect(.bounce, value: selectedType)
             }
         }
     }
