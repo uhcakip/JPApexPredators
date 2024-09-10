@@ -162,12 +162,11 @@ struct ExternalLink: View {
     let url: String
 
     var body: some View {
-        VStack(alignment: .leading) {
-            Text("Read more:")
-                .font(.caption)
+        if let url = URL(string: url) {
+            VStack(alignment: .leading) {
+                Text("Read more:")
+                    .font(.caption)
 
-            // FIXME: optional binding here should be placed out of VStack
-            if let url = URL(string: url) {
                 Link(url.absoluteString, destination: url)
                     .font(.caption)
                     .foregroundColor(.blue)
