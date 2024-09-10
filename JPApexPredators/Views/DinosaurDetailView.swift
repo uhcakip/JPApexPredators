@@ -11,130 +11,35 @@ import MapKit
 
 struct DinosaurDetailView: View {
     @ObserveInjection var inject
-    let dinosaur: Dinosaur
-    private var position: Binding<MapCameraPosition>
+    @StateObject private var viewModel: DinosaurDetailViewModel
 
     init(dinosaur: Dinosaur) {
-        self.dinosaur = dinosaur
-        self.position = .constant(.camera(MapCamera(
-            centerCoordinate: dinosaur.location,
-            distance: 3000
-        )))
+        _viewModel = StateObject(wrappedValue: DinosaurDetailViewModel(dinosaur: dinosaur))
     }
 
     var body: some View {
         GeometryReader { geo in
             ScrollView {
                 ZStack(alignment: .bottomTrailing) {
-                    // MARK: background image
-                    Image(dinosaur.type.rawValue)
-                        .resizable()
-                        .scaledToFit()
-                        .overlay {
-                            LinearGradient(
-                                stops: [
-                                    .init(color: .clear, location: 0.8),
-                                    .init(color: .black, location: 1)
-                                ],
-                                startPoint: .top,
-                                endPoint: .bottom
-                            )
-                        }
-
-                    // MARK: dinosaur image
-                    Image(dinosaur.imageName)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: geo.size.width / 1.5, height: geo.size.height / 3)
-                        .scaleEffect(x: -1)
-                        .offset(y: 20)
-                        .shadow(color: .black, radius: 7)
+                    BackgroundImage(type: viewModel.dinosaur.type)
+                    DinosaurImage(imageName: viewModel.dinosaur.imageName, size: geo.size)
                 }
 
                 VStack(alignment: .leading, spacing: 10) {
-                    // MARK: dinosaur name
-                    Text(dinosaur.name)
+                    Text(viewModel.dinosaur.name)
                         .font(.largeTitle)
                         .fontWeight(.bold)
 
-                    // MARK: current location
-                    NavigationLink {
-                        DinosaurMapView(location: dinosaur.location)
-                    } label: {
-                        Map(position: position) {
-                           Annotation(dinosaur.name, coordinate: dinosaur.location) {
-                                Image(systemName: "mappin.and.ellipse")
-                                    .font(.largeTitle)
-                                    .imageScale(.large)
-                                    .symbolEffect(.pulse)
-                            }
-                            .annotationTitles(.hidden)
-                        }
-                        .frame(height: 125)
-                        .overlay(alignment: .trailing) {
-                            Image(systemName: "greaterthan")
-                                .imageScale(.large)
-                                .font(.title3)
-                                .padding(.trailing, 5)
-                        }
-                        .overlay(alignment: .topLeading) {
-                            Text("Current location")
-                                .padding(5)
-                                .background(.black.opacity(0.5))
-                                .clipShape(.rect(bottomTrailingRadius: 10))
-                        }
-                    }
-                    .clipShape(.rect(cornerRadius: 10))
+                    DinosaurLocationMap(dinosaur: viewModel.dinosaur, position: viewModel.position)
 
-                    // MARK: appears in
-                    Text("Appears in:")
-                        .font(.title3)
-                        .padding(.top, 15)
+                    MovieAppearances(movies: viewModel.dinosaur.movies)
 
-                    ForEach(dinosaur.movies, id: \.self) { movie in
-                        /* HStack {
-                            Image(systemName: "circle.fill")
-                                .font(.system(size: 5))
-                            Text(movie)
-                        } */
+                    MovieScenes(scenes: viewModel.dinosaur.movieScenes)
 
-                        Text("• \(movie)")
-                            .font(.subheadline)
-                    }
-
-                    // MARK: movie moments
-                    Text("Movie moments:")
-                        .font(.title)
-                        .padding(.top, 15)
-
-                    ForEach(dinosaur.movieScenes) { scene in
-                        Text(scene.movie)
-                            .font(.title2)
-                            .padding(.vertical, 1)
-
-                        Text(scene.sceneDescription)
-                            .font(.subheadline)
-                            .padding(.bottom, 15)
-                    }
-
-                    // MARK: link to webpage
-                    Text("Read more:")
-                        .font(.caption)
-
-                    if let url = URL(string: dinosaur.link) {
-                        /* Link(destination: url) {
-                            Text(url.absoluteString)
-                                .font(.subheadline)
-                                    .foregroundColor(.blue)
-                        } */
-                        Link(dinosaur.link, destination: url)
-                            .font(.caption)
-                            .foregroundColor(.blue)
-                    }
+                    ExternalLink(url: viewModel.dinosaur.link)
                 }
                 .padding()
                 .padding(.bottom)
-                // .frame(width: geo.size.width, alignment: .leading)
                 .frame(maxWidth: .infinity, alignment: .leading)
             }
             .ignoresSafeArea()
@@ -144,6 +49,133 @@ struct DinosaurDetailView: View {
     }
 }
 
+struct BackgroundImage: View {
+    let type: DinosaurType
+
+    var body: some View {
+        Image(type.rawValue)
+            .resizable()
+            .scaledToFit()
+            .overlay {
+                LinearGradient(
+                    stops: [
+                        .init(color: .clear, location: 0.8),
+                        .init(color: .black, location: 1)
+                    ],
+                    startPoint: .top,
+                    endPoint: .bottom
+                )
+            }
+    }
+}
+
+struct DinosaurImage: View {
+    let imageName: String
+    let size: CGSize
+
+    var body: some View {
+        Image(imageName)
+            .resizable()
+            .scaledToFit()
+            .frame(width: size.width / 1.5, height: size.height / 3)
+            .scaleEffect(x: -1)
+            .offset(y: 20)
+            .shadow(color: .black, radius: 7)
+    }
+}
+
+struct DinosaurLocationMap: View {
+    let dinosaur: Dinosaur
+    let position: Binding<MapCameraPosition>
+
+    var body: some View {
+        NavigationLink {
+            DinosaurMapView(location: dinosaur.location)
+        } label: {
+            Map(position: position) {
+                Annotation(dinosaur.name, coordinate: dinosaur.location) {
+                    Image(systemName: "mappin.and.ellipse")
+                        .font(.largeTitle)
+                        .imageScale(.large)
+                        .symbolEffect(.pulse)
+                }
+                .annotationTitles(.hidden)
+            }
+            .frame(height: 125)
+            .overlay(alignment: .trailing) {
+                Image(systemName: "greaterthan")
+                    .imageScale(.large)
+                    .font(.title3)
+                    .padding(.trailing, 5)
+            }
+            .overlay(alignment: .topLeading) {
+                Text("Current location")
+                    .padding(5)
+                    .background(.black.opacity(0.5))
+                    .clipShape(.rect(bottomTrailingRadius: 10))
+            }
+        }
+        .clipShape(.rect(cornerRadius: 10))
+    }
+}
+
+struct MovieAppearances: View {
+    let movies: [String]
+
+    var body: some View {
+        VStack(alignment: .leading) {
+            Text("Appears in:")
+                .font(.title3)
+                .padding(.top, 15)
+
+            ForEach(movies, id: \.self) { movie in
+                Text("• \(movie)")
+                    .font(.subheadline)
+            }
+        }
+    }
+}
+
+struct MovieScenes: View {
+    let scenes: [Dinosaur.MovieScene]
+
+    var body: some View {
+        VStack(alignment: .leading) {
+            Text("Movie moments:")
+                .font(.title)
+                .padding(.top, 15)
+
+            ForEach(scenes) { scene in
+                Text(scene.movie)
+                    .font(.title2)
+                    .padding(.vertical, 1)
+
+                Text(scene.sceneDescription)
+                    .font(.subheadline)
+                    .padding(.bottom, 15)
+            }
+        }
+    }
+}
+
+struct ExternalLink: View {
+    let url: String
+
+    var body: some View {
+        VStack(alignment: .leading) {
+            Text("Read more:")
+                .font(.caption)
+
+            // FIXME: optional binding here should be placed out of VStack
+            if let url = URL(string: url) {
+                Link(url.absoluteString, destination: url)
+                    .font(.caption)
+                    .foregroundColor(.blue)
+            }
+        }
+    }
+}
+
 #Preview {
-    DinosaurDetailView(dinosaur: DinosaurController().dinosaurs[7])
+    DinosaurDetailView(dinosaur: DinosaurService().fetchDinosaurs()[7])
 }
