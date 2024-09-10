@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  DinosaurListView.swift
 //  JPApexPredators
 //
 //  Created by Yuna Chou on 2024/8/22.
@@ -8,7 +8,7 @@
 import Inject
 import SwiftUI
 
-struct ContentView: View {
+struct DinosaurListView: View {
     @ObserveInjection var inject
     @StateObject private var viewModel: DinosaurListViewModel
 
@@ -111,5 +111,5 @@ struct FilterMenu: View {
 }
 
 #Preview {
-    ContentView()
+    DinosaurListView()
 }

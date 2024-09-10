@@ -14,7 +14,7 @@
 		E82BD7BB2C9018D900904670 /* DinosaurDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82BD7BA2C9018D900904670 /* DinosaurDetailViewModel.swift */; };
 		E82BD7BD2C902B8200904670 /* DinosaurMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82BD7BC2C902B8200904670 /* DinosaurMapViewModel.swift */; };
 		E860DE8A2C773B4F00F7D68D /* JPApexPredatorsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E860DE892C773B4F00F7D68D /* JPApexPredatorsApp.swift */; };
-		E860DE8C2C773B4F00F7D68D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E860DE8B2C773B4F00F7D68D /* ContentView.swift */; };
+		E860DE8C2C773B4F00F7D68D /* DinosaurListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E860DE8B2C773B4F00F7D68D /* DinosaurListView.swift */; };
 		E860DE8E2C773B5000F7D68D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E860DE8D2C773B5000F7D68D /* Assets.xcassets */; };
 		E860DE912C773B5000F7D68D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E860DE902C773B5000F7D68D /* Preview Assets.xcassets */; };
 		E88E4ECA2C8DD68B006EA7AA /* Stickers.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E88E4EC92C8DD68B006EA7AA /* Stickers.xcassets */; };
@@ -59,7 +59,7 @@
 		E82BD7BC2C902B8200904670 /* DinosaurMapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DinosaurMapViewModel.swift; sourceTree = "<group>"; };
 		E860DE862C773B4F00F7D68D /* JPApexPredators.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JPApexPredators.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E860DE892C773B4F00F7D68D /* JPApexPredatorsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JPApexPredatorsApp.swift; sourceTree = "<group>"; };
-		E860DE8B2C773B4F00F7D68D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		E860DE8B2C773B4F00F7D68D /* DinosaurListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DinosaurListView.swift; sourceTree = "<group>"; };
 		E860DE8D2C773B5000F7D68D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E860DE902C773B5000F7D68D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E88E4EC72C8DD689006EA7AA /* JPApexStickers.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = JPApexStickers.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -106,7 +106,7 @@
 		E83FB5B52C81A05F00F79E59 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				E860DE8B2C773B4F00F7D68D /* ContentView.swift */,
+				E860DE8B2C773B4F00F7D68D /* DinosaurListView.swift */,
 				E8C536D02C86E79800E7AD43 /* DinosaurDetailView.swift */,
 				E8B531C82C8B413F00226CAD /* DinosaurMapView.swift */,
 			);
@@ -299,7 +299,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E860DE8C2C773B4F00F7D68D /* ContentView.swift in Sources */,
+				E860DE8C2C773B4F00F7D68D /* DinosaurListView.swift in Sources */,
 				E8C536D12C86E79800E7AD43 /* DinosaurDetailView.swift in Sources */,
 				E82BD7B32C8EE77200904670 /* DinosaurType.swift in Sources */,
 				E8B531C92C8B413F00226CAD /* DinosaurMapView.swift in Sources */,
