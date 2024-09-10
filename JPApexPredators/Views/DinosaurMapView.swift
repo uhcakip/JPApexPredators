@@ -5,31 +5,21 @@
 //  Created by Yuna Chou on 2024/9/6.
 //
 
-import SwiftUI
 import Inject
+import SwiftUI
 import MapKit
 
 struct DinosaurMapView: View {
     @ObserveInjection var inject
-    @State private var satelliteStyle = false
-    private var position: Binding<MapCameraPosition>
-    private let dinosaurController = DinosaurController()
-
-    var location: CLLocationCoordinate2D
+    @StateObject private var viewModel: DinosaurMapViewModel
 
     init(location: CLLocationCoordinate2D) {
-        self.location = location
-        self.position = .constant(.camera(MapCamera(
-            centerCoordinate: location,
-            distance: 1000,
-            heading: 250,
-            pitch: 80
-        )))
+        _viewModel = StateObject(wrappedValue: DinosaurMapViewModel(location: location))
     }
 
     var body: some View {
-        Map(position: position) {
-            ForEach(dinosaurController.dinosaurs) { dinosaur in
+        Map(position: viewModel.position) {
+            ForEach(viewModel.dinosaurs) { dinosaur in
                 Annotation(dinosaur.name, coordinate: dinosaur.location) {
                     Image(dinosaur.imageName)
                         .resizable()
@@ -40,13 +30,13 @@ struct DinosaurMapView: View {
                 }
             }
         }
-        .mapStyle(satelliteStyle ? .imagery(elevation: .realistic) : .standard(elevation: .realistic))
+        .mapStyle(viewModel.satelliteStyle ? .imagery(elevation: .realistic) : .standard(elevation: .realistic))
         .overlay(alignment: .bottomTrailing) {
             Button {
-                satelliteStyle.toggle()
+                viewModel.satelliteStyle.toggle()
             } label: {
                 Image(systemName: "globe.americas")
-                    .symbolVariant(satelliteStyle ? .fill : .none)
+                    .symbolVariant(viewModel.satelliteStyle ? .fill : .none)
                     .font(.largeTitle)
                     .imageScale(.large)
                     .padding(3)
@@ -61,5 +51,5 @@ struct DinosaurMapView: View {
 }
 
 #Preview {
-    DinosaurMapView(location: DinosaurController().dinosaurs[2].location)
+    DinosaurMapView(location: DinosaurService().fetchDinosaurs()[2].location)
 }
