@@ -21,7 +21,6 @@
 		E88E4ECE2C8DD68B006EA7AA /* JPApexStickers.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = E88E4EC72C8DD689006EA7AA /* JPApexStickers.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		E8B3FE4C2C7DDBA500B47128 /* Inject in Frameworks */ = {isa = PBXBuildFile; productRef = E8B3FE4B2C7DDBA500B47128 /* Inject */; };
 		E8B531C92C8B413F00226CAD /* DinosaurMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B531C82C8B413F00226CAD /* DinosaurMapView.swift */; };
-		E8C4C8B92C7B231D0005ED91 /* DinosaurController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C4C8B82C7B231D0005ED91 /* DinosaurController.swift */; };
 		E8C536D12C86E79800E7AD43 /* DinosaurDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C536D02C86E79800E7AD43 /* DinosaurDetailView.swift */; };
 		E8EAC07A2C785C09005574AF /* dinosaurs.json in Resources */ = {isa = PBXBuildFile; fileRef = E8EAC0792C785C09005574AF /* dinosaurs.json */; };
 		E8EAC07D2C786132005574AF /* Dinosaur.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8EAC07C2C786132005574AF /* Dinosaur.swift */; };
@@ -66,7 +65,6 @@
 		E88E4EC92C8DD68B006EA7AA /* Stickers.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Stickers.xcassets; sourceTree = "<group>"; };
 		E88E4ECB2C8DD68B006EA7AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E8B531C82C8B413F00226CAD /* DinosaurMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DinosaurMapView.swift; sourceTree = "<group>"; };
-		E8C4C8B82C7B231D0005ED91 /* DinosaurController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DinosaurController.swift; sourceTree = "<group>"; };
 		E8C536D02C86E79800E7AD43 /* DinosaurDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DinosaurDetailView.swift; sourceTree = "<group>"; };
 		E8EAC0792C785C09005574AF /* dinosaurs.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = dinosaurs.json; sourceTree = "<group>"; };
 		E8EAC07C2C786132005574AF /* Dinosaur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dinosaur.swift; sourceTree = "<group>"; };
@@ -139,7 +137,6 @@
 				E82BD7B72C8EF17300904670 /* ViewModels */,
 				E83FB5B52C81A05F00F79E59 /* Views */,
 				E82BD7B42C8EE97000904670 /* Services */,
-				E8C4C8BD2C7B293A0005ED91 /* Controllers */,
 				E8C4C8B72C7B12A60005ED91 /* Resources */,
 				E860DE8D2C773B5000F7D68D /* Assets.xcassets */,
 				E860DE8F2C773B5000F7D68D /* Preview Content */,
@@ -170,14 +167,6 @@
 				E8EAC0792C785C09005574AF /* dinosaurs.json */,
 			);
 			path = Resources;
-			sourceTree = "<group>";
-		};
-		E8C4C8BD2C7B293A0005ED91 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				E8C4C8B82C7B231D0005ED91 /* DinosaurController.swift */,
-			);
-			path = Controllers;
 			sourceTree = "<group>";
 		};
 		E8EAC07B2C78610C005574AF /* Models */ = {
@@ -308,7 +297,6 @@
 				E860DE8A2C773B4F00F7D68D /* JPApexPredatorsApp.swift in Sources */,
 				E8EAC07D2C786132005574AF /* Dinosaur.swift in Sources */,
 				E82BD7B62C8EEB8600904670 /* DinosaurService.swift in Sources */,
-				E8C4C8B92C7B231D0005ED91 /* DinosaurController.swift in Sources */,
 				E82BD7B92C8EF1AA00904670 /* DinosaurListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
