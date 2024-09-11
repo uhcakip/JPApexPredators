@@ -14,7 +14,8 @@ protocol DinosaurServiceProtocol {
 class DinosaurService: DinosaurServiceProtocol {
     func fetchDinosaurs() -> [Dinosaur] {
         guard let url = Bundle.main.url(forResource: "dinosaurs", withExtension: "json"),
-              let data = try? Data(contentsOf: url) else {
+              let data = try? Data(contentsOf: url)
+        else {
             return []
         }
 

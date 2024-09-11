@@ -17,7 +17,7 @@ class DinosaurListViewModel: ObservableObject {
 
     init(service: DinosaurServiceProtocol = DinosaurService()) {
         self.service = service
-        self.dinosaurs = service.fetchDinosaurs()
+        dinosaurs = service.fetchDinosaurs()
     }
 
     var filteredDinosaurs: [Dinosaur] {

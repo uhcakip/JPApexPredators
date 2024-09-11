@@ -6,8 +6,8 @@
 //
 
 import Inject
-import SwiftUI
 import MapKit
+import SwiftUI
 
 struct DinosaurDetailView: View {
     @ObserveInjection var inject
@@ -60,7 +60,7 @@ struct BackgroundImage: View {
                 LinearGradient(
                     stops: [
                         .init(color: .clear, location: 0.8),
-                        .init(color: .black, location: 1)
+                        .init(color: .black, location: 1),
                     ],
                     startPoint: .top,
                     endPoint: .bottom

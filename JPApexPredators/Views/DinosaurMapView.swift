@@ -6,8 +6,8 @@
 //
 
 import Inject
-import SwiftUI
 import MapKit
+import SwiftUI
 
 struct DinosaurMapView: View {
     @ObserveInjection var inject

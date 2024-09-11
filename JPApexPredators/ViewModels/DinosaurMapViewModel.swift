@@ -5,8 +5,8 @@
 //  Created by Yuna Chou on 2024/9/10.
 //
 
-import SwiftUI
 import MapKit
+import SwiftUI
 
 class DinosaurMapViewModel: ObservableObject {
     @Published var satelliteStyle = false
@@ -15,7 +15,7 @@ class DinosaurMapViewModel: ObservableObject {
 
     init(dinosaurs: [Dinosaur] = DinosaurService().fetchDinosaurs(), location: CLLocationCoordinate2D) {
         self.dinosaurs = dinosaurs
-        self.position = .constant(.camera(MapCamera(
+        position = .constant(.camera(MapCamera(
             centerCoordinate: location,
             distance: 1000,
             heading: 250,

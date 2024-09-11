@@ -6,8 +6,8 @@
 //
 
 import Foundation
-import SwiftUI
 import MapKit
+import SwiftUI
 
 struct Dinosaur: Decodable, Identifiable {
     struct MovieScene: Decodable, Identifiable {
