@@ -12,9 +12,14 @@ import SwiftUI
 struct DinosaurDetailView: View {
     @ObserveInjection var inject
     @StateObject private var viewModel: DinosaurDetailViewModel
+    let position: Binding<MapCameraPosition>
 
     init(dinosaur: Dinosaur) {
         _viewModel = StateObject(wrappedValue: DinosaurDetailViewModel(dinosaur: dinosaur))
+        position = .constant(.camera(MapCamera(
+            centerCoordinate: dinosaur.location,
+            distance: 3000
+        )))
     }
 
     var body: some View {
@@ -30,7 +35,7 @@ struct DinosaurDetailView: View {
                         .font(.largeTitle)
                         .fontWeight(.bold)
 
-                    DinosaurLocationMap(dinosaur: viewModel.dinosaur, position: viewModel.position)
+                    DinosaurLocationMap(dinosaur: viewModel.dinosaur, position: position)
 
                     MovieAppearances(movies: viewModel.dinosaur.movies)
 

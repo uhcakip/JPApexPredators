@@ -12,13 +12,20 @@ import SwiftUI
 struct DinosaurMapView: View {
     @ObserveInjection var inject
     @StateObject private var viewModel: DinosaurMapViewModel
+    let position: Binding<MapCameraPosition>
 
     init(location: CLLocationCoordinate2D) {
-        _viewModel = StateObject(wrappedValue: DinosaurMapViewModel(location: location))
+        _viewModel = StateObject(wrappedValue: DinosaurMapViewModel())
+        position = .constant(.camera(MapCamera(
+            centerCoordinate: location,
+            distance: 1000,
+            heading: 250,
+            pitch: 80
+        )))
     }
 
     var body: some View {
-        Map(position: viewModel.position) {
+        Map(position: position) {
             ForEach(viewModel.dinosaurs) { dinosaur in
                 Annotation(dinosaur.name, coordinate: dinosaur.location) {
                     Image(dinosaur.imageName)
