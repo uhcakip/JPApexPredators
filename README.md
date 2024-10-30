@@ -1,6 +1,6 @@
 <div align="center">
   <h1>JPApexPredators</h1>
-  
+
   <p>
     <a href="https://developer.apple.com/swift/" target="_blank"><img src="https://img.shields.io/badge/Swift-5.10-585b70?logo=swift&style=for-the-badge&labelColor=313244&logoColor=fab387" alt="Swift 5.10"></a>
     <a href="https://developer.apple.com/xcode/"><img src="https://img.shields.io/badge/Xcode-15.4-585b70?logo=Xcode&style=for-the-badge&labelColor=313244&logoColor=89b4fa" alt="Xcode 15.4"></a>
@@ -16,12 +16,22 @@
     <img src="_Demo/5-mockup-map-screen-imagery.png" width="30%" alt="Map Screen (Imagery)">&nbsp;&nbsp;&nbsp;
     <img src="_Demo/6-mockup-stickers.png" width="30%" alt="Stickers">
   </div>
-
 </div>
 
 ## Overview
-This SwiftUI project is a Jurassic Park themed application that showcases various dinosaurs from the Jurassic Park and Jurassic World movie franchises. Here are the features:
+This SwiftUI project is a Jurassic Park themed application that showcases various dinosaurs from the Jurassic Park and Jurassic World movie franchises.
 
+Based on the Udemy course [iOS 18, SwiftUI 6, & Swift 6: Build iOS Apps From Scratch](https://www.udemy.com/course/ios-15-app-development-with-swiftui-3-and-swift-5/).
+
+### 💡 Custom Implementations
+The following features and improvements were independently developed, extending beyond the course curriculum:
+
+- Integration of additional [packages](#packages) to extend capabilities and streamline development
+- [Project structure](#project-structure) for better organization
+- MVVM architecture, including using `@StateObject` and `@ObservedObject`
+- Reusable UI components for better maintainability
+
+## Features
 - Browse a list of dinosaurs from the Jurassic Park universe
 - Filter dinosaurs by type (land, sea, air)
 - Search for specific dinosaurs
@@ -29,21 +39,8 @@ This SwiftUI project is a Jurassic Park themed application that showcases variou
 - Interactive map showing dinosaur locations
 - Sticker pack extension for iMessage
 
-Based on the Udemy course [iOS 18, SwiftUI 6, & Swift 6: Build iOS Apps From Scratch](https://www.udemy.com/course/ios-15-app-development-with-swiftui-3-and-swift-5/), **with the following implementations by myself**:
-
-- Integration of additional packages (as shown in [Packages](#packages)) to extend capabilities and streamline development
-- Project structure layout (as shown in [Project Structure](#project-structure)) for better organization
-- Improved code quality and functionality (as shown in [Enhancements and Refactoring](#enhancements-and-refactoring))
-
 ## Demo
 <img src="_Demo/demo.gif" alt="JPApexPredators Demo">
-
-## Packages
-This project uses Swift Package Manager (SPM) for dependency management. The following packages are included:
-
-- [Inject](https://github.com/krzysztofzablocki/Inject) - Used for hot reloading during development
-- [SwiftLint](https://github.com/realm/SwiftLint) - Used for code linting
-- [SwiftFormat](https://github.com/nicklockwood/SwiftFormat) - Used for code formatting
 
 ## Project Structure
 - `Views/`: Main views for the dinosaur list, detail, and map interfaces
@@ -72,7 +69,9 @@ JPApexPredators/
     └── dinosaurs.json
 ```
 
-## Enhancements and Refactoring
-- Implemented MVVM architecture for improved separation of concerns
-- Created reusable UI components for better maintainability
-- Utilized SwiftUI's latest features like `@StateObject` and `@ObservedObject`
+## Packages
+This project uses Swift Package Manager (SPM) for dependency management. The following packages are included:
+
+- [Inject](https://github.com/krzysztofzablocki/Inject) - Used for hot reloading during development
+- [SwiftLint](https://github.com/realm/SwiftLint) - Used for code linting
+- [SwiftFormat](https://github.com/nicklockwood/SwiftFormat) - Used for code formatting
